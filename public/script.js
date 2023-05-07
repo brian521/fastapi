@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const div = document.querySelector('div');
 const input = document.querySelector('textarea');
 const button = document.querySelector('button');
 
@@ -7,6 +7,6 @@ form.addEventListener('submit', (e) => {
     const userInput = input.value;
     const newInput = document.createElement('p');
     newInput.innerText = userInput;
-    form.appendChild(newInput);
+    div.appendChild(newInput);
     input.value = '';
 });
