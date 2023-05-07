@@ -1,12 +1,20 @@
 const form = document.querySelector('form');
 const input = document.querySelector('textarea');
-const button = document.querySelector('button');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const userInput = input.value;
-    const newInput = document.createElement('p');
-    newInput.innerText = userInput;
-    form.appendChild(newInput);
-    input.value = '';
+    const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            input: input.value
+        })
+    });
+    const data = await response.json();
+    console.log(data);
+    const p = document.createElement('p');
+    p.innerText = data.input
+    form.appendChild(p);
 });
