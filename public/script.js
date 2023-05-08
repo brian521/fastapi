@@ -4,7 +4,7 @@ const input = document.querySelector('textarea');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log("1");
-    const response = await fetch('http://127.0.0.1:8000', {
+    const response = await fetch('/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
