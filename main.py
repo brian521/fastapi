@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/")
+@app.post("https://port-0-fastapi-687p2alhd9msb3.sel4.cloudtype.app/")
 async def root(request: Request):
     data = await request.json()
     input = data['input']
