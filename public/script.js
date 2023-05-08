@@ -4,7 +4,7 @@ const input = document.querySelector('textarea');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log("1");
-    const response = await fetch('/', {
+    const response = await fetch('https://port-0-fastapi-687p2alhd9msb3.sel4.cloudtype.app', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
