@@ -3,6 +3,7 @@ const input = document.querySelector('textarea');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log("1");
     const response = await fetch('/', {
         method: 'POST',
         headers: {
@@ -12,6 +13,7 @@ form.addEventListener('submit', async (e) => {
             input: input.value
         })
     });
+    console.log("2");
     const data = await response.json();
     console.log(data);
     const p = document.createElement('p');
