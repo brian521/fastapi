@@ -5,6 +5,8 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
+app.mount("/", StaticFiles(directory="public", html = True), name="static")
+print("mount ok")
 
 origins = [
     "https://port-0-fastapi-687p2alhd9msb3.sel4.cloudtype.app/",
@@ -27,5 +29,3 @@ async def root(request: Request):
     input = data['input']
     input = input.lower()
     return JSONResponse({"input": input})
-    
-app.mount("/", StaticFiles(directory="public", html = True), name="static")
