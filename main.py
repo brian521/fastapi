@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("http://127.0.0.1:8000")
+@app.post("/")
 async def root(request: Request):
     data = await request.json()
     input = data['input']
