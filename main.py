@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="public", html = True), name="static")
+app.mount("/public", StaticFiles(directory="public", html = True), name="static")
 print("mount ok")
 
 origins = [
@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/static")
+@app.post("/api")
 async def root(request: Request):
     data = await request.json()
     input = data['input']

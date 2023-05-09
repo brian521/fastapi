@@ -3,7 +3,7 @@ const input = document.querySelector('textarea');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const response = await fetch('/static', {
+    const response = await fetch('/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
